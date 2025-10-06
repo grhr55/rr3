@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const Zauv = require('./components/Zauvs');
+const Vopros = require('./components/Vopros');
 const compression = require('compression');
 const dotenv = require ('dotenv');
 const cors = require('cors');
@@ -39,6 +40,7 @@ app.use(express.urlencoded({ extended: true, limit: '5mb' }));
 
 
 app.use('/zyuvs', Zauv);
+app.use('/ros', Vopros);
 
 
 
