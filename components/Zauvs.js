@@ -16,7 +16,7 @@ app.use('/img', express.static(path.join(__dirname, '/img')))
 
 mongoose.connect(process.env.MONGODB_URI)
     .then(() => {
-        console.log('Заявки ');
+        console.log('Заявк ');
     })
     .catch(err => {
         console.log('Ошибка подключения к MongoDB:', err);
