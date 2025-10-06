@@ -25,8 +25,8 @@ mongoose.connect(process.env.MONGODB_URI)
 
 const VoprosSchema = new mongoose.Schema({
   
-      name: { type: String ,required: true  },
-      telef: { type: String ,required: true  },
+      myname: { type: String ,required: true  },
+      mytelef: { type: String ,required: true  },
       cont: { type: String ,required: true  },
  
       
@@ -40,8 +40,8 @@ const Vopros = mongoose.model('Vopros', VoprosSchema);
 app.post( '/voprosi', async(req ,res) => {
   
    try{
-    const {name,telef,cont } = req.body
-    const zauv = new Vopros({name,telef,cont});
+    const {myname,mytelef,cont } = req.body
+    const zauv = new Vopros({myname,mytelef,cont});
     await zauv.save()
     return res.sendStatus(200)
    }catch(error){
