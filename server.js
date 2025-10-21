@@ -18,7 +18,7 @@ app.use('/img', express.static(path.join(__dirname, '/img')))
 app.use(cors());
 dotenv.config();
 app.use(compression());
-app.use(express.json());
+
 
 
 mongoose.connect(process.env.MONGODB_URI)
@@ -48,7 +48,6 @@ app.use('/ros', Vopros);
 
 
 
-// Запуск сервера
 app.listen(port, () => {
     console.log(`Сервер работает на порту ${port}`);
 });

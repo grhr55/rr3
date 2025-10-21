@@ -6,12 +6,12 @@ const app = express()
 const path = require ('path')
 
 
+app.use('/img', express.static(path.join(__dirname, '/img')))
 
 dotenv.config();
 app.use(cors());
 app.use(express.json());
 
-app.use('/img', express.static(path.join(__dirname, '/img')))
 
 
 mongoose.connect(process.env.MONGODB_URI)
